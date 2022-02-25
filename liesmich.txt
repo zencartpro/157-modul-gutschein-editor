@@ -1,0 +1,49 @@
+Gutscheineditor 1.6.0 für Zen-Cart 1.5.7 deutsch
+
+Sinn und Zweck
+
+Das Bearbeiten/Deaktivieren von bereits versendeten Gutscheinen oder bestehendem Gutscheinguthaben ist normalerweise nur direkt in der Datenbank möglich.
+Mit dieser Erweiterung kann das via Zen-Cart Administration erledigt werden.
+
+Anwendungsbeispiele:
+- Der Admin hat aus Versehen einen Gutschein an einen Kunden gesandt und will nun die Einlösung verhindern.
+- Ein Kunde möchte einen Gutschein deaktiviert haben, den er an jemanden weitergesandt hat
+- Jemand hat sich unrechtmäßig Gutscheinguthaben verschafft und der Admin will das deaktivieren.
+
+Es werden keine Gutscheine gelöscht, sondern es wird nur der Wert wenn gewünscht auf Null gesetzt.
+
+
+Modifikation des Moduls GV Admin Edit von rtw819:
+https://www.zen-cart.com/downloads.php?do=file&id=373
+für die deutsche Zen-Cart Version 1.5.7
+
+
+
+================= WICHTIG =====================
+Vor dem Einbau dieser Änderungen:
+BACKUP von Shop und Datenbank machen! 
+Keine Haftung, Verwendung auf eigene Gefahr!
+BACKUP gemacht? Ok, dann weiterlesen...
+    
+=============== INSTALLATION ===================
+
+1)
+Im Ordner NEUE DATEIEN den Ordner DEINADMIN auf den Namen des Admin Verzeichnisses umbenennen
+Dann alle Ordner/Dateien aus diesem Ordner in der vorgegebenen Struktur ins Zen-Cart Verzeichnis hochladen.
+Dadurch werden keinerlei bestehenden Dateien überschrieben
+
+2)
+Im Ordner GEAENDERTE DATEIEN den Ordner DEINADMIN auf den Namen des Admin Verzeichnisses umbenennen
+Die Dateien darin dann nicht einfach hochladen, sondern mit WinMerge oder Beyond Compare mit den bestehenden vergleichen und die Änderungen mergen
+Dann in der vorgegebenen Struktur hochladen.
+
+3)
+In der Zen-Cart Administration sind jetzt unter Tools zwei neue Menüpunkte verfügbar:
+
+Gutschein Editor (Guthaben)
+Hier kann das verfügbare Guthaben eines Kunden geändert oder auf 0 gesetzt werden
+
+Gutschein Editor (Codes)
+Hier kann der Wert eines Gutscheins geändert oder auf 0 gesetzt werden
+
+Es sollte nie gelöscht werden, sondern auf 0 gesetzt werden
