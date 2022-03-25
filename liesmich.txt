@@ -34,7 +34,7 @@ Dadurch werden keinerlei bestehenden Dateien überschrieben
 
 2)
 Im Ordner GEAENDERTE DATEIEN den Ordner DEINADMIN auf den Namen des Admin Verzeichnisses umbenennen
-Die Dateien darin dann nicht einfach hochladen, sondern mit WinMerge oder Beyond Compare mit den bestehenden vergleichen und die Änderungen mergen
+Die Datei darin dann nicht einfach hochladen, sondern mit WinMerge oder Beyond Compare mit der bestehenden vergleichen und die Änderungen mergen
 Dann in der vorgegebenen Struktur hochladen.
 
 3)

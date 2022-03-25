@@ -92,8 +92,8 @@ $currencies = new currencies();
             $heading = [];
             $contents = [];
 
-  if (isset($gInfo)) {
-  $heading[] = array('text' => '[' . $gInfo->coupon_id . '] ' . ' ' . $currencies->format($gInfo->coupon_amount));
+            if (isset($gInfo)) {
+              $heading[] = array('text' => '[' . $gInfo->coupon_id . '] ' . ' ' . $currencies->format($gInfo->coupon_amount));
               $redeem = $db->Execute("SELECT *
                                       FROM " . TABLE_COUPON_REDEEM_TRACK . "
                                       WHERE coupon_id = " . (int)$gInfo->coupon_id);
