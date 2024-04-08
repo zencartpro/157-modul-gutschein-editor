@@ -1,16 +1,16 @@
 <?php
 /**
  * Zen Cart German Specific
- * @copyright Copyright 2003-2022 Zen Cart Development Team
+ * @copyright Copyright 2003-2024 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: gv_admin_redemption_edit.php 2022-02-25 18:10:24Z webchills $
+ * @version $Id: gv_admin_redemption_edit.php 2024-04-08 16:10:24Z webchills $
  */
 
-  require('includes/application_top.php');
+require 'includes/application_top.php';
 
-  require(DIR_WS_CLASSES . 'currencies.php');
+require DIR_WS_CLASSES . 'currencies.php';
   $currencies = new currencies(); 
 
 
@@ -102,10 +102,11 @@
   </head>
   <body>
     <!-- header //-->
-    <?php require(DIR_WS_INCLUDES . 'header.php'); ?>
+    <?php require DIR_WS_INCLUDES . 'header.php'; ?>
     <!-- header_eof //-->
+    <!-- body //-->
     <div class="container-fluid">
-      <!-- body //-->
+    
 <table border="0" width="100%" cellspacing="2" cellpadding="2">
   <tr>
 <!-- body_text //-->
@@ -133,7 +134,7 @@
 
               </tr>
 <?php
-  $gv_query_raw = "select c.coupon_amount, c.coupon_code, c.coupon_id, et.sent_firstname, et.sent_lastname, et.customer_id_sent, et.emailed_to, et.date_sent, crt.redeem_date, c.coupon_id, c.date_modified
+  $gv_query_raw = "select c.coupon_amount, c.coupon_code, c.coupon_id, et.sent_firstname, et.sent_lastname, et.customer_id_sent, et.emailed_to, et.date_sent, crt.redeem_date, c.date_modified
                   from " . TABLE_COUPONS . " c
                   left join " . TABLE_COUPON_REDEEM_TRACK . " crt
                   on c.coupon_id= crt.coupon_id, " . TABLE_COUPON_EMAIL_TRACK . " et
@@ -207,8 +208,9 @@
     default:
 
       $heading[] = array('text' => '<b>' . TEXT_GV_EDIT . '</b>');
+      if (isset($gInfo)){
       $heading[] = array('text' => '[' . $gInfo->coupon_id . '] ' . ' ' . $currencies->format($gInfo->coupon_amount));
-
+      }
       if ($gv_list->RecordCount() == 0) {
         $contents[] = array('align' => 'center','text' => TEXT_GV_NONE);
       } else {
@@ -226,7 +228,7 @@
       break;
    }
 
-  if ( (zen_not_null($heading)) && (zen_not_null($contents)) ) {
+              if (!empty($heading) && !empty($contents)) {
     echo '            <td width="25%" valign="top">' . "\n";
 
     $box = new box;
@@ -248,7 +250,8 @@
       </div>
       <!-- body_eof //-->
       <!-- footer //-->
-  <?php require(DIR_WS_INCLUDES . 'footer.php'); ?>
+    <?php require DIR_WS_INCLUDES . 'footer.php'; ?>
       <!-- footer_eof //-->
     </body>
   </html>
+<?php require DIR_WS_INCLUDES . 'application_bottom.php'; ?>
